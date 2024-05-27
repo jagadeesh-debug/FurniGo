@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>SHOP ME</title>
+    <style>
+        .bg-custom {
+            background-image: url('com.png');
+        }
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animated-text span {
+            display: inline-block;
+            opacity: 0;
+            animation: slideIn 0.5s ease-in-out forwards;
+        }
+
+        .animated-text span:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .animated-text span:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .animated-text span:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        .animated-text span:nth-child(4) {
+            animation-delay: 1.5s;
+        }
+
+        .animated-text span:nth-child(5) {
+            animation-delay: 2s;
+        }
+    </style>
+     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+</head>
+<body class="min-h-screen bg-custom bg-cover bg-center sm:bg-cover sm:bg-center">
+    <div class="h-full relative">
+        <nav class="flex items-center justify-between p-4 w-full bg-white bg-opacity-0 ">
+            <div class="flex items-center">
+                <img src="Designer.png" alt="Logo" class="h-12 w-12 md:h-20 md:w-20 rounded-full brightness-100 saturate-100"/>
+            </div>
+            <ul class="hidden md:flex flex-1 justify-end items-center space-x-4 md:space-x-10 font-serif text-yellow-300">
+                <li class="list-none inline-block px-10"><a href="#" class="px-2 text-2xl rounded-full  shadow-md hover:shadow-green-400 ">Home</a></li>
+                <li class="list-none inline-block px-10"><a href="#" class="px-2 text-2xl  rounded-full shadow-md hover:shadow-green-400 ">Wishlist</a></li>
+                <li class="list-none inline-block px-10"><a href="#" class="px-2 text-2xl  rounded-full shadow-md hover:shadow-green-400 ">Orders</a></li>
+                <li class="list-none inline-block px-10"><a href="#" class="px-2 text-2xl  rounded-full shadow-md hover:shadow-green-400 ">Account</a></li>
+                <li class="list-none inline-block px-10"><a href="#" class="px-2 text-2xl"><box-icon name='cart' size="40px"></box-icon></a></li>
+            </ul>
+            <div class="flex items-center md:hidden">
+                <button id="menu-button" class="relative z-50">
+                    <svg id="menu-icon" class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                    <svg id="close-icon" class="fill-current h-6 w-6 hidden relative top-0 left-0" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Close</title>
+                        <path d="M10 8.586L15.95 2.636a1 1 0 1 1 1.414 1.414L11.414 10l5.95 5.95a1 1 0 0 1-1.414 1.414L10 11.414l-5.95 5.95a1 1 0 0 1-1.414-1.414L8.586 10 2.636 4.05a1 1 0 0 1 1.414-1.414L10 8.586z" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden fixed top-0 left-0 w-full h-full bg-white bg-opacity-90 z-40 flex flex-col items-center justify-center">
+            <ul class="flex flex-col items-center space-y-4">
+                <li class="list-none"><a href="#" class="px-2 text-2xl">Home</a></li>
+                <li class="list-none"><a href="#" class="px-2 text-2xl">Wishlist</a></li>
+                <li class="list-none"><a href="#" class="px-2 text-2xl">Orders</a></li>
+                <li class="list-none"><a href="#" class="px-2 text-2xl">Account</a></li>
+                <li class="list-none inline-block px-10"><a href="#" class="px-2 text-2xl"><box-icon name='cart' size="40px"></box-icon></a></li>
+
+            </ul>
+        </div>
+            <div class="mt-10 ml-10 md:mt-48 md:ml-32 text-balance md:w-1/2 animated-text">
+                <h3 class="text-5xl md:text-8xl text-balance font-serif text-green-300">
+                    <span>Pick</span>
+                    <span>Your</span>
+                    <span>Choice</span>
+                    <span>With</span>
+                    <span>Us</span>
+                </h3>
+                <p class="text-2xl italic mt-5 text-amber-200">Starting at rupees just 1000$</p>
+            </div>
+            <div class="mt-40 ml-10 md:mt-28 md:ml-96  ">
+                <button class="px-4 py-2 text-3xl  rounded-full  shadow-md shadow-green-500 font-serif">Order Now</button>
+            </div>
+    </div>
+    <script>
+        document.getElementById('menu-button').addEventListener('click', function() {
+            var menuIcon = document.getElementById('menu-icon');
+            var closeIcon = document.getElementById('close-icon');
+            var mobileMenu = document.getElementById('mobile-menu');
+
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
